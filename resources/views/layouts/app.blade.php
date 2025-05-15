@@ -216,29 +216,29 @@
                                 </a>
                                 <div class="collapse" id="charts">
                                     <ul class="nav nav-collapse">
-                                        <li><a href="#"><span class="sub-item">Chart Js</span></a></li>
-                                        <li><a href="#"><span class="sub-item">Sparkline</span></a></li>
+                                        <li><a href="#"><span class="sub-item">Cetak Data Barang</span></a></li>
+                                        <li><a href="#"><span class="sub-item">Cetar QR Code</span></a></li>
                                     </ul>
                                 </div>
                             </li>
                         @else
                             {{-- User Section --}}
                             <li class="nav-item {{ request()->is('user/assets*') ? 'active' : '' }}">
-                                <a href="{{ url('/user/assets') }}">
+                                <a href="#{{ url('/user/assets') }}">
                                     <i class="fas fa-box"></i>
                                     <p>Data Aset</p>
                                 </a>
                             </li>
 
                             <li class="nav-item {{ request()->is('user/borrowings/create') ? 'active' : '' }}">
-                                <a href="{{ url('/user/borrowings/create') }}">
+                                <a href="#{{ url('/user/borrowings/create') }}">
                                     <i class="fas fa-hand-holding"></i>
                                     <p>Peminjaman Aset</p>
                                 </a>
                             </li>
 
                             <li class="nav-item {{ request()->is('user/borrowings/history') ? 'active' : '' }}">
-                                <a href="{{ url('/user/borrowings/history') }}">
+                                <a href="#{{ url('/user/borrowings/history') }}">
                                     <i class="fas fa-history"></i>
                                     <p>Riwayat Peminjaman</p>
                                 </a>
