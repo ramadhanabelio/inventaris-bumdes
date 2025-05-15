@@ -11,10 +11,9 @@
                                 Daftar Kategori
                             </div>
                             <div class="card-tools">
-                                <a href="{{ route('admin.categories.create') }}"
-                                    class="btn btn-info btn-border btn-round btn-sm mr-2">
+                                <a href="{{ route('admin.categories.create') }}" class="btn btn-info btn-round btn-sm mr-2">
                                     <span class="btn-label">
-                                        <i class="fa fa-pencil"></i>
+                                        <i class="fa fa-plus ml-1 mr-2"></i>
                                     </span>
                                     Tambah Kategori
                                 </a>

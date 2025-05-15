@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Item;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,6 +17,11 @@ class ItemController extends Controller
     {
         $items = Item::with('category')->get();
         return view('admin.items.index', compact('items'));
+    }
+
+    public function detail(Item $item)
+    {
+        return view('admin.items.detail', compact('item'));
     }
 
     public function create()
@@ -92,5 +99,17 @@ class ItemController extends Controller
 
         $item->delete();
         return redirect()->route('admin.items.index')->with('success', 'Item deleted successfully.');
+    }
+
+    public function exportPdf()
+    {
+        $items = Item::with('category')->get();
+
+        Carbon::setLocale('id');
+
+        $pdf = Pdf::loadView('admin.items.pdf', compact('items'))
+            ->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Barang.pdf');
     }
 }

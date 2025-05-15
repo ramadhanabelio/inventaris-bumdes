@@ -4,7 +4,7 @@
     <div class="page-inner mt--5">
         <div class="row">
             <div class="col-sm-6 col-md-3">
-                <a href="">
+                <a href="{{ route('borrow.asset') }}">
                     <div class="card card-stats card-round">
                         <div class="card-body ">
                             <div class="row">
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="col-sm-6 col-md-3">
-                <a href="">
+                <a href="{{ route('borrow.loan.create') }}">
                     <div class="card card-stats card-round">
                         <div class="card-body ">
                             <div class="row">
@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="col-sm-6 col-md-3">
-                <a href="">
+                <a href="{{ route('borrow.history') }}">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row">

@@ -200,15 +200,15 @@
                             </li>
 
                             {{-- Transaksi --}}
-                            <li class="nav-item">
-                                <a data-toggle="collapse" href="#tables">
+                            <li class="nav-item {{ request()->is('admin/loans*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.loans.index') }}">
                                     <i class="fas fa-table"></i>
                                     <p>Transaksi Peminjaman</p>
                                 </a>
                             </li>
 
                             {{-- Laporan --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a data-toggle="collapse" href="#charts">
                                     <i class="far fa-chart-bar"></i>
                                     <p>Laporan</p>
@@ -220,25 +220,25 @@
                                         <li><a href="#"><span class="sub-item">Cetar QR Code</span></a></li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li> --}}
                         @else
                             {{-- User Section --}}
-                            <li class="nav-item {{ request()->is('user/assets*') ? 'active' : '' }}">
-                                <a href="#{{ url('/user/assets') }}">
+                            <li class="nav-item {{ request()->is('asset') ? 'active' : '' }}">
+                                <a href="{{ route('borrow.asset') }}">
                                     <i class="fas fa-box"></i>
                                     <p>Data Aset</p>
                                 </a>
                             </li>
 
-                            <li class="nav-item {{ request()->is('user/borrowings/create') ? 'active' : '' }}">
-                                <a href="#{{ url('/user/borrowings/create') }}">
+                            <li class="nav-item {{ request()->is('loan') ? 'active' : '' }}">
+                                <a href="{{ route('borrow.loan.create') }}">
                                     <i class="fas fa-hand-holding"></i>
                                     <p>Peminjaman Aset</p>
                                 </a>
                             </li>
 
-                            <li class="nav-item {{ request()->is('user/borrowings/history') ? 'active' : '' }}">
-                                <a href="#{{ url('/user/borrowings/history') }}">
+                            <li class="nav-item {{ request()->is('history') ? 'active' : '' }}">
+                                <a href="{{ route('borrow.history') }}">
                                     <i class="fas fa-history"></i>
                                     <p>Riwayat Peminjaman</p>
                                 </a>
@@ -434,6 +434,7 @@
             });
         });
     </script>
+    @stack('scripts')
 </body>
 
 </html>

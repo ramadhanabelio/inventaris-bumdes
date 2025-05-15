@@ -10,11 +10,16 @@
                             <div class="card-title">
                                 Daftar Barang
                             </div>
-                            <div class="card-tools">
-                                <a href="{{ route('admin.items.create') }}"
-                                    class="btn btn-info btn-border btn-round btn-sm mr-2">
+                            <div class="card-tools d-flex">
+                                <a href="{{ route('admin.items.export.pdf') }}" class="btn btn-danger btn-round btn-sm mr-2">
                                     <span class="btn-label">
-                                        <i class="fa fa-pencil"></i>
+                                        <i class="fa fa-file-pdf ml-1 mr-2"></i>
+                                    </span>
+                                    Cetak Data
+                                </a>
+                                <a href="{{ route('admin.items.create') }}" class="btn btn-info btn-round btn-sm">
+                                    <span class="btn-label">
+                                        <i class="fa fa-plus ml-1 mr-2"></i>
                                     </span>
                                     Tambah Barang
                                 </a>
@@ -33,6 +38,7 @@
                                         <th>Jumlah</th>
                                         <th>Status</th>
                                         <th>Kondisi</th>
+                                        <th>QR Code</th>
                                         <th style="width: 20%">Action</th>
                                     </tr>
                                 </thead>
@@ -46,6 +52,33 @@
                                             <td>{{ $item->quantity }}</td>
                                             <td>{{ $item->status }}</td>
                                             <td>{{ $item->condition }}</td>
+                                            <td>
+                                                <a class="btn btn-link btn-secondary btn-lg" data-toggle="modal"
+                                                    data-target="#qrModal{{ $item->id }}">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+
+                                                <div class="modal fade" id="qrModal{{ $item->id }}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="qrModalLabel{{ $item->id }}"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm modal-dialog-centered"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">QR Code - {{ $item->name }}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Tutup">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                {!! QrCode::size(200)->generate(route('admin.items.detail', $item->id)) !!}
+                                                                <p class="mt-2">Scan untuk detail barang</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{ route('admin.items.edit', $item) }}"

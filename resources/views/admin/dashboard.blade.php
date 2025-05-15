@@ -67,7 +67,7 @@
                 </a>
             </div>
             <div class="col-sm-6 col-md-3">
-                <a href="">
+                <a href="{{ route('admin.loans.index') }}">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row">
@@ -94,7 +94,7 @@
                     <div class="card-header">
                         <div class="card-head-row">
                             <div class="card-title">
-                                Jumlah Barang Masuk dan Barang Keluar
+                                Jumlah Barang Baik dan Barang Rusak
                             </div>
                         </div>
                     </div>
@@ -109,3 +109,37 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('statisticsChart').getContext('2d');
+        const statisticsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Barang Baik', 'Barang Rusak'],
+                datasets: [{
+                    label: 'Jumlah',
+                    data: [{{ $totalBaik }}, {{ $totalRusak }}],
+                    backgroundColor: ['#a8d5a2', '#f5a1a1'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        precision: 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+@endpush

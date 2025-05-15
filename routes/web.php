@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\Admin\ItemController;
+use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -22,21 +24,29 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
+Route::get('register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    });
+    Route::get('home', [BorrowController::class, 'index'])->name('borrow.home');
+    Route::get('asset', [BorrowController::class, 'assets'])->name('borrow.asset');
+    Route::get('history', [BorrowController::class, 'history'])->name('borrow.history');
+    Route::get('loan', [BorrowController::class, 'create'])->name('borrow.loan.create');
+    Route::post('loan', [BorrowController::class, 'store'])->name('borrow.loan.store');
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('categories', CategoryController::class);
         Route::resource('users', UserController::class);
         Route::resource('items', ItemController::class);
+        Route::get('items/{item}/detail', [ItemController::class, 'detail'])->name('items.detail');
+        Route::get('items-export-pdf', [ItemController::class, 'exportPdf'])->name('items.export.pdf');
+        Route::resource('loans', LoanController::class);
+        Route::get('loans-export-pdf', [LoanController::class, 'exportPdf'])->name('loans.export.pdf');
+        Route::post('loans/{loan}/approve', [LoanController::class, 'approve'])->name('loans.approve');
+        Route::post('loans/{loan}/reject', [LoanController::class, 'reject'])->name('loans.reject');
     });
 });
