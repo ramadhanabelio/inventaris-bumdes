@@ -140,15 +140,23 @@
                         </div>
                     </div>
                     <ul class="nav nav-primary">
-                        <!-- Dashboard -->
-                        <li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
-                            <a href="{{ route('admin.admin.dashboard') }}">
-                                <i class="fas fa-home"></i>
-                                <p>Dashboard</p>
-                            </a>
+                        {{-- Dashboard --}}
+                        <li
+                            class="nav-item {{ request()->is('home') || request()->is('admin/dashboard') ? 'active' : '' }}">
+                            @if (Auth::user()->role === 'admin')
+                                <a href="{{ route('admin.dashboard') }}">
+                                    <i class="fas fa-home"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            @else
+                                <a href="{{ url('/home') }}">
+                                    <i class="fas fa-home"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            @endif
                         </li>
 
-                        <!-- Section Title -->
+                        {{-- Section title --}}
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
@@ -156,70 +164,86 @@
                             <h4 class="text-section">Components</h4>
                         </li>
 
-                        <!-- Data Master -->
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#base"
-                                {{ request()->is('admin/users*') || request()->is('admin/categories*') ? 'aria-expanded=true' : 'aria-expanded=false' }}
-                                class="{{ request()->is('admin/users*') || request()->is('admin/categories*') ? '' : 'collapsed' }}">
-                                <i class="fas fa-layer-group"></i>
-                                <p>Data Master</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse {{ request()->is('admin/users*') || request()->is('admin/categories*') ? 'show' : '' }}"
-                                id="base">
-                                <ul class="nav nav-collapse">
-                                    <li class="{{ request()->is('admin/users*') ? 'active' : '' }}">
-                                        <a href="{{ route('admin.users.index') }}">
-                                            <span class="sub-item">Data User</span>
-                                        </a>
-                                    </li>
-                                    <li class="{{ request()->is('admin/categories*') ? 'active' : '' }}">
-                                        <a href="{{ route('admin.categories.index') }}">
-                                            <span class="sub-item">Data Kategori</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        @if (Auth::user()->role === 'admin')
+                            {{-- Admin Section --}}
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#base"
+                                    {{ request()->is('admin/users*') || request()->is('admin/categories*') ? 'aria-expanded=true' : 'aria-expanded=false' }}
+                                    class="{{ request()->is('admin/users*') || request()->is('admin/categories*') ? '' : 'collapsed' }}">
+                                    <i class="fas fa-layer-group"></i>
+                                    <p>Data Master</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse {{ request()->is('admin/users*') || request()->is('admin/categories*') ? 'show' : '' }}"
+                                    id="base">
+                                    <ul class="nav nav-collapse">
+                                        <li class="{{ request()->is('admin/users*') ? 'active' : '' }}">
+                                            <a href="{{ route('admin.users.index') }}">
+                                                <span class="sub-item">Data User</span>
+                                            </a>
+                                        </li>
+                                        <li class="{{ request()->is('admin/categories*') ? 'active' : '' }}">
+                                            <a href="{{ route('admin.categories.index') }}">
+                                                <span class="sub-item">Data Kategori</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
-                        <!-- Data Barang -->
-                        <li class="nav-item {{ request()->is('admin/items*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.items.index') }}">
-                                <i class="fas fa-pen-square"></i>
-                                <p>Data Barang</p>
-                            </a>
-                        </li>
+                            {{-- Data Barang --}}
+                            <li class="nav-item {{ request()->is('admin/items*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.items.index') }}">
+                                    <i class="fas fa-pen-square"></i>
+                                    <p>Data Barang</p>
+                                </a>
+                            </li>
 
-                        <!-- Transaksi -->
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#tables">
-                                <i class="fas fa-table"></i>
-                                <p>Transaksi Peminjaman</p>
-                            </a>
-                        </li>
+                            {{-- Transaksi --}}
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#tables">
+                                    <i class="fas fa-table"></i>
+                                    <p>Transaksi Peminjaman</p>
+                                </a>
+                            </li>
 
-                        <!-- Laporan -->
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#charts">
-                                <i class="far fa-chart-bar"></i>
-                                <p>Laporan</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="charts">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="">
-                                            <span class="sub-item">Chart Js</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span class="sub-item">Sparkline</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                            {{-- Laporan --}}
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#charts">
+                                    <i class="far fa-chart-bar"></i>
+                                    <p>Laporan</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="charts">
+                                    <ul class="nav nav-collapse">
+                                        <li><a href="#"><span class="sub-item">Chart Js</span></a></li>
+                                        <li><a href="#"><span class="sub-item">Sparkline</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @else
+                            {{-- User Section --}}
+                            <li class="nav-item {{ request()->is('user/assets*') ? 'active' : '' }}">
+                                <a href="{{ url('/user/assets') }}">
+                                    <i class="fas fa-box"></i>
+                                    <p>Data Aset</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item {{ request()->is('user/borrowings/create') ? 'active' : '' }}">
+                                <a href="{{ url('/user/borrowings/create') }}">
+                                    <i class="fas fa-hand-holding"></i>
+                                    <p>Peminjaman Aset</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item {{ request()->is('user/borrowings/history') ? 'active' : '' }}">
+                                <a href="{{ url('/user/borrowings/history') }}">
+                                    <i class="fas fa-history"></i>
+                                    <p>Riwayat Peminjaman</p>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -233,7 +257,7 @@
                         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                             <div>
                                 <h2 class="text-white pb-2 fw-bold">
-                                    <a href="{{ route('admin.admin.dashboard') }}">Dashboard</a>
+                                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                                 </h2>
                                 <h5 class="text-white op-7 mb-2">
                                     BUMDes Sumber Rezeki - Desa Bantan Sari
