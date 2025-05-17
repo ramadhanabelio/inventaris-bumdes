@@ -50,8 +50,24 @@
                                             <td>{{ $item->category->name ?? '-' }}</td>
                                             <td>{{ $item->brand }}</td>
                                             <td>{{ $item->quantity }}</td>
-                                            <td>{{ $item->status }}</td>
-                                            <td>{{ $item->condition }}</td>
+                                            <td>
+                                                @if ($item->status === 'Diproses')
+                                                    <span class="badge bg-warning text-dark">Diproses</span>
+                                                @elseif ($item->status === 'Diterima')
+                                                    <span class="badge bg-success text-white">Diterima</span>
+                                                @elseif ($item->status === 'Ditolak')
+                                                    <span class="badge bg-danger text-white">Ditolak</span>
+                                                @else
+                                                    <span class="badge bg-secondary text-white">{{ $item->status }}</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if (strtolower($item->condition) === 'baik')
+                                                    <span class="badge bg-success text-white">Baik</span>
+                                                @else
+                                                    <span class="badge bg-danger text-white">{{ $item->condition }}</span>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <a class="btn btn-link btn-secondary btn-lg" data-toggle="modal"
                                                     data-target="#qrModal{{ $item->id }}">

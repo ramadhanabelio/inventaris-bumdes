@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('loan', [BorrowController::class, 'create'])->name('borrow.loan.create');
     Route::post('loan', [BorrowController::class, 'store'])->name('borrow.loan.store');
 
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('is_admin')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('categories', CategoryController::class);
         Route::resource('users', UserController::class);
