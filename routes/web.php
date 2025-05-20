@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('landing-page');
 });
 
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');

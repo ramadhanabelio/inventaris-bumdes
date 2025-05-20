@@ -8,14 +8,14 @@
                     <div class="card-header">
                         <div class="card-head-row">
                             <div class="card-title">
-                                Daftar User
+                                Daftar Pengguna
                             </div>
                             <div class="card-tools">
                                 <a href="{{ route('admin.users.create') }}" class="btn btn-info btn-round btn-sm mr-2">
                                     <span class="btn-label">
                                         <i class="fa fa-plus ml-1 mr-2"></i>
                                     </span>
-                                    Tambah User
+                                    Tambah Pengguna
                                 </a>
                             </div>
                         </div>

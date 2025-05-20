@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px;">
             <div class="text-center mb-3">
-                <img src="../assets/img/logo.png" alt="navbar brand" class="navbar-brand" width="23%" /> &nbsp;
+                <img src="{{ asset('img/logo.png') }}" alt="navbar brand" class="navbar-brand" width="23%" /> &nbsp;
             </div>
             <form method="POST" action="{{ route('login') }}">
                 @csrf

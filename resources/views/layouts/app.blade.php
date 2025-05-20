@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BUMDes Sumber Rezeki - Desa Bantan Sari</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon" />
     <!-- Fonts and icons -->
-    <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
         WebFont.load({
             google: {
@@ -23,7 +23,7 @@
                     "Font Awesome 5 Brands",
                     "simple-line-icons",
                 ],
-                urls: ["{{ asset('assets/css/fonts.min.css') }}"],
+                urls: ["{{ asset('admin/css/fonts.min.css') }}"],
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -31,10 +31,10 @@
         });
     </script>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/atlantis.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/atlantis.min.css') }}" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/demo.css') }}" />
 </head>
 
 <body>
@@ -43,8 +43,8 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
                 <a href="" class="logo">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="navbar brand" class="navbar-brand"
-                        width="23%" /> &nbsp;
+                    <img src="{{ asset('img/logo.png') }}" alt="navbar brand" class="navbar-brand" width="23%" />
+                    &nbsp;
                     <span class="text-white">Sumber
                         Rezeki</span>
                 </a>
@@ -80,7 +80,7 @@
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false">
                                 <div class="avatar-sm">
-                                    <img src="{{ asset('assets/img/profile.png') }}" alt="..."
+                                    <img src="{{ asset('img/profile.png') }}" alt="..."
                                         class="avatar-img rounded-circle" />
                                 </div>
                             </a>
@@ -89,7 +89,7 @@
                                     <li>
                                         <div class="user-box">
                                             <div class="avatar-lg">
-                                                <img src="{{ asset('assets/img/profile.png') }}" alt="image profile"
+                                                <img src="{{ asset('img/profile.png') }}" alt="image profile"
                                                     class="avatar-img rounded" />
                                             </div>
                                             <div class="u-text">
@@ -128,7 +128,7 @@
                 <div class="sidebar-content">
                     <div class="user">
                         <div class="avatar-sm float-left mr-2">
-                            <img src="{{ asset('assets/img/profile.png') }}" alt="..."
+                            <img src="{{ asset('img/profile.png') }}" alt="..."
                                 class="avatar-img rounded-circle" />
                         </div>
                         <div class="info">
@@ -163,7 +163,7 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">Components</h4>
+                            <h4 class="text-section">Menu</h4>
                         </li>
 
                         @if (Auth::user()->role === 'admin')
@@ -181,7 +181,7 @@
                                     <ul class="nav nav-collapse">
                                         <li class="{{ request()->is('admin/users*') ? 'active' : '' }}">
                                             <a href="{{ route('admin.users.index') }}">
-                                                <span class="sub-item">Data User</span>
+                                                <span class="sub-item">Data Pengguna</span>
                                             </a>
                                         </li>
                                         <li class="{{ request()->is('admin/categories*') ? 'active' : '' }}">
@@ -208,21 +208,6 @@
                                     <p>Transaksi Peminjaman</p>
                                 </a>
                             </li>
-
-                            {{-- Laporan --}}
-                            {{-- <li class="nav-item">
-                                <a data-toggle="collapse" href="#charts">
-                                    <i class="far fa-chart-bar"></i>
-                                    <p>Laporan</p>
-                                    <span class="caret"></span>
-                                </a>
-                                <div class="collapse" id="charts">
-                                    <ul class="nav nav-collapse">
-                                        <li><a href="#"><span class="sub-item">Cetak Data Barang</span></a></li>
-                                        <li><a href="#"><span class="sub-item">Cetar QR Code</span></a></li>
-                                    </ul>
-                                </div>
-                            </li> --}}
                         @else
                             {{-- User Section --}}
                             <li class="nav-item {{ request()->is('asset') ? 'active' : '' }}">
@@ -288,31 +273,31 @@
     </div>
 
     <!-- Core JS Files -->
-    <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/js/core/jquery.3.2.1.min.js') }}"></script>
+    <script src="{{ asset('admin/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('admin/js/core/bootstrap.min.js') }}"></script>
     <!-- jQuery UI -->
-    <script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
     <!-- jQuery Scrollbar -->
-    <script src="{{ asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
     <!-- Chart JS -->
-    <script src="{{ asset('assets/js/plugin/chart.js/chart.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/chart.js/chart.min.js') }}"></script>
     <!-- jQuery Sparkline -->
-    <script src="{{ asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
     <!-- Chart Circle -->
-    <script src="{{ asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/chart-circle/circles.min.js') }}"></script>
     <!-- Datatables -->
-    <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <!-- Bootstrap Notify -->
-    <script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
     <!-- jQuery Vector Maps -->
-    <script src="{{ asset('assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
     <!-- Sweet Alert -->
-    <script src="{{ asset('assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
     <!-- Atlantis JS -->
-    <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
+    <script src="{{ asset('admin/js/atlantis.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#basic-datatables").DataTable({});
