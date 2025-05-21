@@ -4,7 +4,7 @@
     <div class="page-inner mt--5">
         <div class="row">
             <div class="col-md-12">
-                <form method="POST" action="{{ route('admin.categories.update', $category) }}">
+                <form action="{{ route('admin.categories.update', $category) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="card">
@@ -14,18 +14,10 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="categoryName">Nama Kategori</label>
-                                        <input type="text" class="form-control" id="categoryName" name="name"
-                                            value="{{ $category->name }}" required>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('admin.categories.form')
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-success">Perbarui</button>
+                            <button type="submit" class="btn btn-success">Perbarui</button>
                             <a href="{{ route('admin.categories.index') }}" class="btn btn-danger">Batal</a>
                         </div>
                     </div>

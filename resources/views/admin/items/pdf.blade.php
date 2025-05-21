@@ -72,7 +72,7 @@
 
 <body>
     <div class="header">
-        <img src="{{ public_path('assets/img/logo.png') }}" alt="Logo">
+        <img src="{{ public_path('img/logo.png') }}" alt="Logo">
         <div class="title">
             <h2>Laporan Data Barang</h2>
             <p>BUMDes Sumber Rezeki - Desa Bantan Sari</p>

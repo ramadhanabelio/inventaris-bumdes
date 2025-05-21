@@ -20,14 +20,14 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('user/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="{{ asset('user/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -58,7 +58,7 @@
             <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="5000">
                 <div class="carousel-item active">
-                    <img src="{{ asset('user/img/carousel-1.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-1.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Badan Usaha Milik Desa (BUMDes) Sumber Rezeki<br></h2>
                         <a href="#about" class="btn-get-started">Mulai</a>
@@ -68,7 +68,7 @@
 
                 <!-- Carousel Item 2 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('user/img/carousel-2.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-2.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Memberdayakan Masyarakat Desa</h2>
                         <p class="text-center">BUMDes Sumber Rezeki hadir sebagai wadah untuk meningkatkan kesejahteraan
@@ -80,7 +80,7 @@
 
                 <!-- Carousel Item 3 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('user/img/carousel-3.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-3.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Mewujudkan Desa Mandiri dan Produktif</h2>
                         <p class="text-center">Dengan semangat gotong royong, kami bergerak bersama untuk menciptakan
@@ -254,7 +254,7 @@
             <p>© <span>Copyright</span> <strong class="px-1 sitename">BUMDes Sumber Rezeki</strong>
             </p>
             <div class="credits">
-                2025, made with by <a href="#"> Nurul Hafiza</a>
+                2025, Designed by <a href="">Nurul Hafiza</a>
             </div>
         </div>
     </footer>
@@ -267,18 +267,18 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('user/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('user/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('user/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ asset('user/vendor/waypoints/noframework.waypoints.js') }}"></script>
-    <script src="{{ asset('user/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Main JS File -->
-    <script src="{{ asset('user/js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

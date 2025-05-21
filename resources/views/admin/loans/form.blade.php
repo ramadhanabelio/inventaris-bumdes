@@ -1,7 +1,7 @@
 @csrf
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-6">
         <div class="form-group">
             <label for="user_id">Peminjam</label>
             <select name="user_id" class="form-control" required>
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-6">
         <div class="form-group">
             <label for="item_id">Barang</label>
             <select name="item_id" class="form-control" required>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-6">
         <div class="form-group">
             <label for="borrowed_date">Tanggal Pinjam</label>
             <input type="date" name="borrowed_date" class="form-control"
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-6">
         <div class="form-group">
             <label for="return_date">Tanggal Kembali</label>
             <input type="date" name="return_date" class="form-control"
@@ -48,7 +48,7 @@
     </div>
 
     @if (isset($loan))
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-6">
             <div class="form-group">
                 <label for="status">Status</label>
                 <select name="status" class="form-control" required>
