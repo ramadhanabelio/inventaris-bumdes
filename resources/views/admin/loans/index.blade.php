@@ -32,7 +32,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama User</th>
+                                        <th>Nama Peminjam</th>
                                         <th>Nama Barang</th>
                                         <th>Tanggal Pinjam</th>
                                         <th>Tanggal Kembali</th>

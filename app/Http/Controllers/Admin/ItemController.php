@@ -54,7 +54,7 @@ class ItemController extends Controller
             'qr_code' => Str::random(20),
         ]);
 
-        return redirect()->route('admin.items.index')->with('success', 'Item created successfully.');
+        return redirect()->route('admin.items.index')->with('success', 'Barang berhasil ditambahkan.');
     }
 
     public function edit(Item $item)
@@ -88,7 +88,7 @@ class ItemController extends Controller
 
         $item->update($request->except('image'));
 
-        return redirect()->route('admin.items.index')->with('success', 'Item updated successfully.');
+        return redirect()->route('admin.items.index')->with('success', 'Barang berhasil diperbarui.');
     }
 
     public function destroy(Item $item)
@@ -98,7 +98,7 @@ class ItemController extends Controller
         }
 
         $item->delete();
-        return redirect()->route('admin.items.index')->with('success', 'Item deleted successfully.');
+        return redirect()->route('admin.items.index')->with('success', 'Barang berhasil dihapus.');
     }
 
     public function exportPdf()

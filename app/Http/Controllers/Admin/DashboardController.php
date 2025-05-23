@@ -4,24 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Item;
 use App\Models\Loan;
+use App\Models\User;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $totalItems = Item::count();
+        $totalBarang = Item::count();
         $totalPeminjaman = Loan::count();
-        $totalRusak = Item::where('condition', 'Rusak')->count();
+        $totalKategori = Category::count();
+        $totalPengguna = User::where('role', 'user')->count();
         $totalBaik = Item::where('condition', 'Baik')->count();
-        $totalTakTerpakai = Item::where('status', 'Ditolak')->count();
+        $totalRusak = Item::where('condition', 'Rusak')->count();
 
         return view('admin.dashboard', compact(
-            'totalItems',
-            'totalRusak',
             'totalBaik',
-            'totalPeminjaman',
-            'totalTakTerpakai'
+            'totalRusak',
+            'totalBarang',
+            'totalKategori',
+            'totalPengguna',
+            'totalPeminjaman'
         ));
     }
 }

@@ -41,7 +41,7 @@ class AuthController extends Controller
             'role' => 'user'
         ]);
 
-        return redirect()->route('login')->with('success', 'Registration successful. Please login.');
+        return redirect()->route('login')->with('success', 'Daftar berhasil. Silahkan masuk.');
     }
 
     public function login(Request $request)
@@ -62,7 +62,7 @@ class AuthController extends Controller
             }
         }
 
-        return back()->withErrors(['login' => 'Invalid credentials.']);
+        return back()->withErrors(['login' => 'Terjadi kesalahan.']);
     }
 
     public function logout()

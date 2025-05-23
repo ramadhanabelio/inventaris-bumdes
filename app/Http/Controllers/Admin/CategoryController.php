@@ -23,7 +23,7 @@ class CategoryController extends Controller
     {
         $request->validate(['name' => 'required|string|max:100']);
         Category::create($request->only('name'));
-        return redirect()->route('admin.categories.index')->with('success', 'Category added.');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil ditambahkan.');
     }
 
     public function edit(Category $category)
@@ -35,12 +35,12 @@ class CategoryController extends Controller
     {
         $request->validate(['name' => 'required|string|max:100']);
         $category->update($request->only('name'));
-        return redirect()->route('admin.categories.index')->with('success', 'Category updated.');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil diperbarui.');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('admin.categories.index')->with('success', 'Category deleted.');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil dihapus.');
     }
 }

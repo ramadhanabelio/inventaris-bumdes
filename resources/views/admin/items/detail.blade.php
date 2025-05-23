@@ -18,7 +18,6 @@
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
                                     class="img-fluid rounded" style="max-height: 250px;">
                             </div>
-
                             <div class="col-md-8">
                                 <div class="table-responsive">
                                     <table class="table table-bordered border border-light table-striped table-hover">
