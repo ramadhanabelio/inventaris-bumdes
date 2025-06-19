@@ -41,9 +41,9 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Beranda</a></li>
-                    <li><a href="#about">Sekilas BUMDes</a></li>
-                    <li><a href="#team">Struktur Organisasi</a></li>
+                    <li><a href="#beranda" class="active">Beranda</a></li>
+                    <li><a href="#tentang">Sekilas BUMDes</a></li>
+                    <li><a href="#struktur-organisasi">Struktur Organisasi</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -54,47 +54,47 @@
 
     <main class="main">
         <!-- Hero Section -->
-        <section id="hero" class="hero section dark-background">
-            <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+        <section id="beranda" class="beranda section dark-background">
+            <div id="beranda-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="5000">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/carousel-1.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-11.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Badan Usaha Milik Desa (BUMDes) Sumber Rezeki<br></h2>
-                        <a href="#about" class="btn-get-started">Mulai</a>
+                        <a href="#tentang" class="btn-get-started">Mulai</a>
                     </div>
                 </div>
                 <!-- End Carousel Item -->
 
                 <!-- Carousel Item 2 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('img/carousel-2.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-22.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Memberdayakan Masyarakat Desa</h2>
                         <p class="text-center">BUMDes Sumber Rezeki hadir sebagai wadah untuk meningkatkan kesejahteraan
                             warga melalui pengelolaan usaha milik desa secara transparan dan profesional.</p>
-                        <a href="#team" class="btn-get-started">Lihat Tim Kami</a>
+                        <a href="#struktur-organisasi" class="btn-get-started">Lihat Tim Kami</a>
                     </div>
                 </div>
                 <!-- End Carousel Item -->
 
                 <!-- Carousel Item 3 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('img/carousel-3.jpg') }}" alt="">
+                    <img src="{{ asset('img/carousel-33.jpg') }}" alt="">
                     <div class="carousel-container">
                         <h2 class="text-center">Mewujudkan Desa Mandiri dan Produktif</h2>
                         <p class="text-center">Dengan semangat gotong royong, kami bergerak bersama untuk menciptakan
                             peluang kerja dan meningkatkan pendapatan masyarakat desa.</p>
-                        <a href="#about" class="btn-get-started">Pelajari Lebih Lanjut</a>
+                        <a href="#tentang" class="btn-get-started">Pelajari Lebih Lanjut</a>
                     </div>
                 </div>
                 <!-- End Carousel Item -->
 
-                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <a class="carousel-control-prev" href="#beranda-carousel" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
                 </a>
 
-                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <a class="carousel-control-next" href="#beranda-carousel" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
                 </a>
 
@@ -104,7 +104,7 @@
         <!-- /Hero Section -->
 
         <!-- About Section -->
-        <section id="about" class="about section">
+        <section id="tentang" class="tentang section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -135,7 +135,7 @@
                         <p>BUMDes Sumber Rezeki berkomitmen membangun ekosistem ekonomi desa yang tangguh, mandiri, dan
                             berdaya saing. Setiap langkah yang kami ambil didasari oleh semangat kebersamaan,
                             akuntabilitas, dan inovasi demi masa depan desa yang lebih baik.</p>
-                        <a href="#team" class="read-more"><span>Lihat Anggota</span><i
+                        <a href="#struktur-organisasi" class="read-more"><span>Lihat Anggota</span><i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
         </section>
         <!-- /About Section -->
 
-        <section id="team" class="team section">
+        <section id="struktur-organisasi" class="struktur-organisasi section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -155,12 +155,12 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="team-member d-flex align-items-start">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
                             <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
                                     alt=""></div>
                             <div class="member-info">
-                                <h4>Suryanto</h4>
-                                <span>Kepala Desa</span>
+                                <h4>Gunondo</h4>
+                                <span>Penaset (Pj. Kepala Desa)</span>
                                 <p>Memimpin pemerintahan desa dan bertanggung jawab atas kebijakan pembangunan desa.</p>
                             </div>
                         </div>
@@ -168,12 +168,12 @@
                     <!-- End Team Member -->
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="team-member d-flex align-items-start">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
                             <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
                                     alt=""></div>
                             <div class="member-info">
-                                <h4>Lestari</h4>
-                                <span>Sekretaris Desa</span>
+                                <h4>Metty Yusmasari</h4>
+                                <span>Dewan Pengawas</span>
                                 <p>Mengelola administrasi pemerintahan desa dan mendukung kinerja kepala desa.</p>
                             </div>
                         </div>
@@ -181,12 +181,12 @@
                     <!-- End Team Member -->
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="team-member d-flex align-items-start">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
                             <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
                                     alt=""></div>
                             <div class="member-info">
-                                <h4>Agus Saputra</h4>
-                                <span>Bendahara Desa</span>
+                                <h4>Hadi Sofyan</h4>
+                                <span>Direktur BUMDes</span>
                                 <p>Bertanggung jawab atas pengelolaan keuangan desa secara transparan dan akuntabel.</p>
                             </div>
                         </div>
@@ -194,14 +194,47 @@
                     <!-- End Team Member -->
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="team-member d-flex align-items-start">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
                             <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
                                     alt=""></div>
                             <div class="member-info">
-                                <h4>Dewi Anggraini</h4>
-                                <span>Ketua BUMDes</span>
+                                <h4>Siti Muntamah</h4>
+                                <span>Plt. Sekretaris & Bendahara</span>
                                 <p>Mengelola dan mengembangkan unit usaha milik desa untuk meningkatkan ekonomi
                                     masyarakat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Team Member -->
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
+                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div>
+                            <div class="member-info">
+                                <h4>Koordinator</h4>
+                                <span>Unit Usaha Simpan Pinjam (Lestari)</span>
+                                <ul class="mt-2">
+                                    <li>Roziah</li>
+                                    <li>Uswatun Khasanah</li>
+                                    <li>Mas Kosim</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Team Member -->
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="struktur-organisasi-member d-flex align-items-start">
+                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div>
+                            <div class="member-info">
+                                <h4>Koordinator</h4>
+                                <span>Unit Usaha Perdagangan dan Produksi</span>
+                                <ul class="mt-2">
+                                    <li>Nurhasanah Febri Haryani</li>
+                                    <li>Siti Muntamah</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -230,9 +263,9 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="#hero">Beranda</a></li>
-                        <li><a href="#about">Sekilas BUMDes</a></li>
-                        <li><a href="#team">Struktur Organisasi</a></li>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#tentang">Sekilas BUMDes</a></li>
+                        <li><a href="#struktur-organisasi">Struktur Organisasi</a></li>
                     </ul>
                 </div>
 

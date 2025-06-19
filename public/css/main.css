@@ -786,11 +786,11 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
+.beranda {
     padding: 0;
 }
 
-.hero .carousel {
+.beranda .carousel {
     width: 100%;
     min-height: calc(100vh - 90px);
     padding: 0;
@@ -800,12 +800,12 @@ section,
 }
 
 @media (max-width: 1200px) {
-    .hero .carousel {
+    .beranda .carousel {
         min-height: calc(100vh - 66px);
     }
 }
 
-.hero img {
+.beranda img {
     position: absolute;
     inset: 0;
     display: block;
@@ -815,7 +815,7 @@ section,
     z-index: 1;
 }
 
-.hero .carousel-item {
+.beranda .carousel-item {
     position: absolute;
     inset: 0;
     background-size: cover;
@@ -824,7 +824,7 @@ section,
     overflow: hidden;
 }
 
-.hero .carousel-item:before {
+.beranda .carousel-item:before {
     content: "";
     background: color-mix(in srgb, var(--background-color), transparent 50%);
     position: absolute;
@@ -832,7 +832,7 @@ section,
     z-index: 2;
 }
 
-.hero .carousel-container {
+.beranda .carousel-container {
     position: absolute;
     inset: 90px 64px 64px 64px;
     display: flex;
@@ -842,7 +842,7 @@ section,
     z-index: 3;
 }
 
-.hero h2 {
+.beranda h2 {
     margin-bottom: 30px;
     font-size: 48px;
     font-weight: 700;
@@ -850,23 +850,23 @@ section,
 }
 
 @media (max-width: 768px) {
-    .hero h2 {
+    .beranda h2 {
         font-size: 30px;
     }
 }
 
-.hero p {
+.beranda p {
     animation: fadeInDown 1s both 0.2s;
 }
 
 @media (min-width: 1024px) {
-    .hero h2,
-    .hero p {
+    .beranda h2,
+    .beranda p {
         max-width: 60%;
     }
 }
 
-.hero .btn-get-started {
+.beranda .btn-get-started {
     color: var(--contrast-color);
     background: var(--accent-color);
     font-family: var(--heading-font);
@@ -881,45 +881,45 @@ section,
     animation: fadeInUp 1s both 0.4s;
 }
 
-.hero .btn-get-started:hover {
+.beranda .btn-get-started:hover {
     background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
+.beranda .carousel-control-prev,
+.beranda .carousel-control-next {
     width: 10%;
     transition: 0.3s;
     opacity: 0.5;
 }
 
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
+.beranda .carousel-control-prev:focus,
+.beranda .carousel-control-next:focus {
     opacity: 0.5;
 }
 
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
+.beranda .carousel-control-prev:hover,
+.beranda .carousel-control-next:hover {
     opacity: 0.9;
 }
 
 @media (min-width: 1024px) {
-    .hero .carousel-control-prev,
-    .hero .carousel-control-next {
+    .beranda .carousel-control-prev,
+    .beranda .carousel-control-next {
         width: 5%;
     }
 }
 
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
+.beranda .carousel-control-next-icon,
+.beranda .carousel-control-prev-icon {
     font-size: 32px;
     line-height: 1;
 }
 
-.hero .carousel-indicators {
+.beranda .carousel-indicators {
     list-style: none;
 }
 
-.hero .carousel-indicators li {
+.beranda .carousel-indicators li {
     cursor: pointer;
 }
 
@@ -950,24 +950,24 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about ul {
+.tentang ul {
     list-style: none;
     padding: 0;
 }
 
-.about ul li {
+.tentang ul li {
     padding-bottom: 5px;
     display: flex;
     align-items: center;
 }
 
-.about ul i {
+.tentang ul i {
     font-size: 20px;
     padding-right: 4px;
     color: var(--accent-color);
 }
 
-.about .read-more {
+.tentang .read-more {
     background: var(--accent-color);
     color: var(--contrast-color);
     font-family: var(--heading-font);
@@ -982,18 +982,18 @@ section,
     justify-content: center;
 }
 
-.about .read-more i {
+.tentang .read-more i {
     font-size: 18px;
     margin-left: 5px;
     line-height: 0;
     transition: 0.3s;
 }
 
-.about .read-more:hover {
+.tentang .read-more:hover {
     background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.about .read-more:hover i {
+.tentang .read-more:hover i {
     transform: translate(5px, 0);
 }
 
@@ -1344,7 +1344,7 @@ section,
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.team .team-member {
+.struktur-organisasi .struktur-organisasi-member {
     background-color: var(--surface-color);
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -1355,46 +1355,46 @@ section,
 }
 
 @media (max-width: 468px) {
-    .team .team-member {
+    .struktur-organisasi .struktur-organisasi-member {
         flex-direction: column;
         justify-content: center !important;
         align-items: center !important;
     }
 }
 
-.team .team-member .pic {
+.struktur-organisasi .struktur-organisasi-member .pic {
     overflow: hidden;
     width: 150px;
     border-radius: 5px;
     flex-shrink: 0;
 }
 
-.team .team-member .pic img {
+.struktur-organisasi .struktur-organisasi-member .pic img {
     transition: ease-in-out 0.3s;
 }
 
-.team .team-member:hover {
+.struktur-organisasi .struktur-organisasi-member:hover {
     transform: translateY(-10px);
 }
 
-.team .team-member .member-info {
+.struktur-organisasi .struktur-organisasi-member .member-info {
     padding-left: 30px;
 }
 
 @media (max-width: 468px) {
-    .team .team-member .member-info {
+    .struktur-organisasi .struktur-organisasi-member .member-info {
         padding: 30px 0 0 0;
         text-align: center;
     }
 }
 
-.team .team-member h4 {
+.struktur-organisasi .struktur-organisasi-member h4 {
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
 }
 
-.team .team-member span {
+.struktur-organisasi .struktur-organisasi-member span {
     display: block;
     font-size: 15px;
     padding-bottom: 10px;
@@ -1402,7 +1402,7 @@ section,
     font-weight: 500;
 }
 
-.team .team-member span::after {
+.struktur-organisasi .struktur-organisasi-member span::after {
     content: "";
     position: absolute;
     display: block;
@@ -1414,17 +1414,17 @@ section,
 }
 
 @media (max-width: 468px) {
-    .team .team-member span::after {
+    .struktur-organisasi .struktur-organisasi-member span::after {
         left: calc(50% - 25px);
     }
 }
 
-.team .team-member p {
+.struktur-organisasi .struktur-organisasi-member p {
     margin: 10px 0 0 0;
     font-size: 14px;
 }
 
-.team .team-member .social {
+.struktur-organisasi .struktur-organisasi-member .social {
     margin-top: 12px;
     display: flex;
     align-items: center;
@@ -1433,12 +1433,12 @@ section,
 }
 
 @media (max-width: 468px) {
-    .team .team-member .social {
+    .struktur-organisasi .struktur-organisasi-member .social {
         justify-content: center;
     }
 }
 
-.team .team-member .social a {
+.struktur-organisasi .struktur-organisasi-member .social a {
     background: color-mix(in srgb, var(--default-color), transparent 94%);
     transition: ease-in-out 0.3s;
     display: flex;
@@ -1449,21 +1449,21 @@ section,
     height: 36px;
 }
 
-.team .team-member .social a i {
+.struktur-organisasi .struktur-organisasi-member .social a i {
     color: color-mix(in srgb, var(--default-color), transparent 20%);
     font-size: 16px;
     margin: 0 2px;
 }
 
-.team .team-member .social a:hover {
+.struktur-organisasi .struktur-organisasi-member .social a:hover {
     background: var(--accent-color);
 }
 
-.team .team-member .social a:hover i {
+.struktur-organisasi .struktur-organisasi-member .social a:hover i {
     color: var(--contrast-color);
 }
 
-.team .team-member .social a + a {
+.struktur-organisasi .struktur-organisasi-member .social a + a {
     margin-left: 8px;
 }
 
