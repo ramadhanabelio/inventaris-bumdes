@@ -23,7 +23,7 @@ class Item extends Model
         'status',
         'condition',
         'image',
-        'qr_code'
+        'qr_code',
     ];
 
     public function category()

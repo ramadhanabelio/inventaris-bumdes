@@ -191,6 +191,14 @@
                                 </a>
                             </li>
 
+                            {{-- Data Peralatan --}}
+                            <li class="nav-item {{ request()->is('admin/inventories*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.inventories.index') }}">
+                                    <i class="fas fa-cogs"></i>
+                                    <p>Data Peralatan</p>
+                                </a>
+                            </li>
+
                             {{-- Transaksi --}}
                             <li class="nav-item {{ request()->is('admin/loans*') ? 'active' : '' }}">
                                 <a href="{{ route('admin.loans.index') }}">

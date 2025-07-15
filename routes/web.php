@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('items', ItemController::class);
         Route::get('items/{item}/detail', [ItemController::class, 'detail'])->name('items.detail');
         Route::get('items-export-pdf', [ItemController::class, 'exportPdf'])->name('items.export.pdf');
+        Route::resource('inventories', InventoryController::class);
+        Route::get('inventories-export-pdf', [InventoryController::class, 'exportPdf'])->name('inventories.export.pdf');
         Route::resource('loans', LoanController::class);
         Route::get('loans-export-pdf', [LoanController::class, 'exportPdf'])->name('loans.export.pdf');
         Route::post('loans/{loan}/approve', [LoanController::class, 'approve'])->name('loans.approve');
