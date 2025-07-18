@@ -51,5 +51,6 @@ Route::middleware('auth')->group(function () {
         Route::get('loans-export-pdf', [LoanController::class, 'exportPdf'])->name('loans.export.pdf');
         Route::post('loans/{loan}/approve', [LoanController::class, 'approve'])->name('loans.approve');
         Route::post('loans/{loan}/reject', [LoanController::class, 'reject'])->name('loans.reject');
+        Route::post('loans/{loan}/return', [LoanController::class, 'returned'])->name('loans.return');
     });
 });

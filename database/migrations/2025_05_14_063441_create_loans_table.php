@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
             $table->date('borrowed_date');
             $table->date('return_date')->nullable();
-            $table->string('status', 100);
+            $table->enum('status', ['Diproses', 'Disetujui', 'Ditolak', 'Dikembalikan', 'Selesai'])->default('Diproses');
             $table->timestamps();
         });
     }

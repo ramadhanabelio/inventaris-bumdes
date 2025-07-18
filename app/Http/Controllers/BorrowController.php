@@ -49,7 +49,7 @@ class BorrowController extends Controller
         $loan->item_id = $request->item_id;
         $loan->borrowed_date = $request->borrowed_date;
         $loan->return_date = $request->return_date;
-        $loan->status = 'Dipinjam';
+        $loan->status = 'Diproses';
         $loan->save();
 
         Mail::to(Auth::user()->email)->send(new LoanNotification($loan));

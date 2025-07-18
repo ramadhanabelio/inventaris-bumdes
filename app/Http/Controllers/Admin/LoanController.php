@@ -41,7 +41,7 @@ class LoanController extends Controller
             'item_id' => $request->item_id,
             'borrowed_date' => $request->borrowed_date,
             'return_date' => $request->return_date,
-            'status' => 'Dipinjam',
+            'status' => 'Diproses',
         ]);
 
         return redirect()->route('admin.loans.index')->with('success', 'Peminjaman berhasil ditambahkan.');
@@ -90,6 +90,12 @@ class LoanController extends Controller
         Mail::to($loan->user->email)->send(new LoanNotification($loan));
 
         return redirect()->back()->with('success', 'Peminjaman ditolak.');
+    }
+
+    public function returned(Loan $loan)
+    {
+        $loan->update(['status' => 'Selesai']);
+        return redirect()->back()->with('success', 'Peminjaman telah ditandai sebagai selesai.');
     }
 
     public function exportPdf()

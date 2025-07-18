@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Status Peminjaman BUMDes</title>
+    <title>Peminjaman BUMDes Sumber Rezeki</title>
 </head>
 
 <body>
     <h3>Halo, {{ $loan->user->name }},</h3>
 
-    @if ($loan->status === 'Dipinjam')
+    @if ($loan->status === 'Diproses')
         <p>Permintaan Anda sedang diproses. Silakan tunggu konfirmasi lebih lanjut dari kami.</p>
     @else
         <p>Permintaan peminjaman Anda dengan rincian berikut telah <strong>{{ $loan->status }}</strong>:</p>

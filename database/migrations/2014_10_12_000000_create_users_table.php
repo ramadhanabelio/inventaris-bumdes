@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->text('address');
-            $table->enum('role', ['admin', 'user'])->default('user');
+            $table->enum('role', ['user', 'admin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

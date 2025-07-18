@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="status">Status</label>
                 <select name="status" class="form-control" required>
-                    @foreach (['Dipinjam', 'Disetujui', 'Ditolak'] as $status)
+                    @foreach (['Diproses', 'Disetujui', 'Ditolak'] as $status)
                         <option value="{{ $status }}"
                             {{ old('status', $loan->status ?? '') == $status ? 'selected' : '' }}>
                             {{ $status }}

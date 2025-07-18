@@ -51,7 +51,7 @@
                                             <td>{{ $loan->status }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    @if ($loan->status == 'Dipinjam')
+                                                    @if ($loan->status == 'Diproses')
                                                         <form action="{{ route('admin.loans.approve', $loan) }}"
                                                             method="POST" style="display:inline;">
                                                             @csrf
@@ -84,9 +84,18 @@
                                                                 <i class="fa fa-times"></i>
                                                             </button>
                                                         </form> --}}
+                                                    @elseif($loan->status == 'Disetujui')
+                                                        <form action="{{ route('admin.loans.return', $loan) }}"
+                                                            method="POST" style="display:inline;">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-warning btn-sm"
+                                                                onclick="return confirm('Tandai peminjaman ini sebagai selesai?')">
+                                                                <i class="fa fa-undo mr-2"></i> Dikembalikan
+                                                            </button>
+                                                        </form>
                                                     @else
                                                         <span
-                                                            class="badge {{ $loan->status == 'Disetujui' ? 'badge-success' : 'badge-danger' }}">
+                                                            class="badge {{ $loan->status == 'Ditolak' ? 'badge-danger' : 'badge-secondary' }}">
                                                             {{ $loan->status }}
                                                         </span>
                                                     @endif
