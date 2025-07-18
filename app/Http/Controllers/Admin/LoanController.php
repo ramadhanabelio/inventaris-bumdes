@@ -7,8 +7,10 @@ use App\Models\Item;
 use App\Models\Loan;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Mail\LoanNotification;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class LoanController extends Controller
 {
@@ -75,12 +77,18 @@ class LoanController extends Controller
     public function approve(Loan $loan)
     {
         $loan->update(['status' => 'Disetujui']);
+
+        Mail::to($loan->user->email)->send(new LoanNotification($loan));
+
         return redirect()->back()->with('success', 'Peminjaman disetujui.');
     }
 
     public function reject(Loan $loan)
     {
         $loan->update(['status' => 'Ditolak']);
+
+        Mail::to($loan->user->email)->send(new LoanNotification($loan));
+
         return redirect()->back()->with('success', 'Peminjaman ditolak.');
     }
 

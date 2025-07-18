@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Models\Loan;
 use Illuminate\Http\Request;
+use App\Mail\LoanNotification;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BorrowController extends Controller
 {
@@ -49,6 +51,8 @@ class BorrowController extends Controller
         $loan->return_date = $request->return_date;
         $loan->status = 'Dipinjam';
         $loan->save();
+
+        Mail::to(Auth::user()->email)->send(new LoanNotification($loan));
 
         return redirect()->route('borrow.history')->with('success', 'Peminjaman berhasil diajukan.');
     }
