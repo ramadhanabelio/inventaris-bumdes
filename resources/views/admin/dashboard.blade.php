@@ -46,13 +46,34 @@
                 </a>
             </div>
             <div class="col-sm-6 col-md-3">
+                <a href="{{ route('admin.inventories.index') }}">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="icon-big text-center">
+                                        <i class="flaticon-box text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7 col-stats">
+                                    <div class="numbers">
+                                        <p class="card-category">Data Peralatan</p>
+                                        <h4 class="card-title">{{ $totalPeralatan }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
                 <a href="{{ route('admin.users.index') }}">
                     <div class="card card-stats card-round">
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="flaticon-users text-warning"></i>
+                                        <i class="flaticon-users text-danger"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-stats">
@@ -73,7 +94,7 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="flaticon-shapes-1 text-danger"></i>
+                                        <i class="flaticon-shapes-1 text-success"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-stats">

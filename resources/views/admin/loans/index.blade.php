@@ -11,12 +11,26 @@
                                 Daftar Peminjaman
                             </div>
                             <div class="card-tools d-flex">
-                                <a href="{{ route('admin.loans.export.pdf') }}" class="btn btn-danger btn-round btn-sm mr-2">
-                                    <span class="btn-label">
-                                        <i class="fa fa-file-pdf ml-1 mr-2"></i>
-                                    </span>
-                                    Cetak Data
-                                </a>
+                                <div class="dropdown">
+                                    <button class="btn btn-danger btn-round btn-sm dropdown-toggle mr-2" type="button"
+                                        id="pdfDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-file-pdf mr-1"></i> Cetak Data
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="pdfDropdown">
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'all']) }}">Semua</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'Diproses']) }}">Diproses</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'Disetujui']) }}">Disetujui</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'Ditolak']) }}">Ditolak</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'Dikembalikan']) }}">Dikembalikan</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.loans.export.pdf', ['status' => 'Selesai']) }}">Selesai</a>
+                                    </div>
+                                </div>
                                 <a href="{{ route('admin.loans.create') }}" class="btn btn-info btn-round btn-sm">
                                     <span class="btn-label">
                                         <i class="fa fa-plus ml-1 mr-2"></i>

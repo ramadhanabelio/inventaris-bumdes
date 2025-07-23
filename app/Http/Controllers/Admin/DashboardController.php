@@ -6,6 +6,7 @@ use App\Models\Item;
 use App\Models\Loan;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Inventory;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -15,6 +16,7 @@ class DashboardController extends Controller
         $totalBarang = Item::count();
         $totalPeminjaman = Loan::count();
         $totalKategori = Category::count();
+        $totalPeralatan = Inventory::count();
         $totalPengguna = User::where('role', 'user')->count();
         $totalBaik = Item::where('condition', 'Baik')->count();
         $totalRusak = Item::where('condition', 'Rusak')->count();
@@ -24,6 +26,7 @@ class DashboardController extends Controller
             'totalRusak',
             'totalBarang',
             'totalKategori',
+            'totalPeralatan',
             'totalPengguna',
             'totalPeminjaman'
         ));

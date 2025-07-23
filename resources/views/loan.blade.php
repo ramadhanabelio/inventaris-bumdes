@@ -72,4 +72,34 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const borrowedInput = document.getElementById('borrowed_date');
+            const returnInput = document.getElementById('return_date');
+
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            borrowedInput.min = todayStr;
+
+            borrowedInput.addEventListener('change', function() {
+                const borrowedDate = new Date(borrowedInput.value);
+                if (isNaN(borrowedDate.getTime())) return;
+
+                const minReturnDate = borrowedDate;
+                const maxReturnDate = new Date(borrowedDate);
+                maxReturnDate.setDate(maxReturnDate.getDate() + 6);
+
+                returnInput.min = minReturnDate.toISOString().split('T')[0];
+                returnInput.max = maxReturnDate.toISOString().split('T')[0];
+
+                if (returnInput.value) {
+                    const returnVal = new Date(returnInput.value);
+                    if (returnVal < minReturnDate || returnVal > maxReturnDate) {
+                        returnInput.value = "";
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

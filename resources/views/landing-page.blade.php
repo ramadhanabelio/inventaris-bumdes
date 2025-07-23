@@ -156,8 +156,8 @@
                 <div class="row gy-4">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Gunondo</h4>
                                 <span>Penaset (Pj. Kepala Desa)</span>
@@ -169,8 +169,8 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Metty Yusmasari</h4>
                                 <span>Dewan Pengawas</span>
@@ -182,8 +182,8 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Hadi Sofyan</h4>
                                 <span>Direktur BUMDes</span>
@@ -195,8 +195,8 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Siti Muntamah</h4>
                                 <span>Plt. Sekretaris & Bendahara</span>
@@ -209,8 +209,8 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Koordinator</h4>
                                 <span>Unit Usaha Simpan Pinjam (Lestari)</span>
@@ -226,8 +226,8 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="struktur-organisasi-member d-flex align-items-start">
-                            <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
-                                    alt=""></div>
+                            {{-- <div class="pic"><img src="{{ asset('img/profile.png') }}" class="img-fluid"
+                                    alt=""></div> --}}
                             <div class="member-info">
                                 <h4>Koordinator</h4>
                                 <span>Unit Usaha Perdagangan dan Produksi</span>

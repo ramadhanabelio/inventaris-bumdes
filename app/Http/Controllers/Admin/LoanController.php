@@ -94,18 +94,28 @@ class LoanController extends Controller
 
     public function returned(Loan $loan)
     {
-        $loan->update(['status' => 'Selesai']);
+        $loan->update(['status' => 'Dikembalikan']);
         return redirect()->back()->with('success', 'Peminjaman telah ditandai sebagai selesai.');
     }
 
-    public function exportPdf()
+    public function exportPdf(Request $request)
     {
-        $loans = Loan::with(['user', 'item'])->latest()->get();
+        $status = $request->status;
+
+        $query = Loan::with(['user', 'item'])->latest();
+
+        if ($status && $status !== 'all') {
+            $query->where('status', $status);
+        }
+
+        $loans = $query->get();
 
         Carbon::setLocale('id');
 
-        $pdf = Pdf::loadView('admin.loans.pdf', compact('loans'))
-            ->setPaper('a4');
+        $pdf = Pdf::loadView('admin.loans.pdf', [
+            'loans' => $loans,
+            'statusFilter' => $status,
+        ])->setPaper('a4');
 
         return $pdf->stream('Laporan Peminjaman.pdf');
     }

@@ -36,7 +36,7 @@
                                                     class="badge 
                                                     @if ($loan->status == 'Diproses') badge-warning 
                                                     @elseif ($loan->status == 'Disetujui') badge-success 
-                                                    @elseif ($loan->status == 'Selesai') badge-secondary 
+                                                    @elseif ($loan->status == 'Dikembalikan') badge-secondary 
                                                     @else badge-danger @endif">
                                                     {{ $loan->status }}
                                                 </span>
